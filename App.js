@@ -1,10 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from "expo-font";
+import Login from './components/pages/Login.js';
 
 export default function App() {
+  const [fontsLoaded, error] = useFonts({
+    "Noto-Regular": require("./assets/fonts/NotoSansArabic-Regular.ttf"),
+    "Noto-Bold": require("./assets/fonts/NotoSansArabic-Bold.ttf"),
+  });
+  if (!fontsLoaded && !error) {
+    return null;
+  }
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Login />
       <StatusBar style="auto" />
     </View>
   );
@@ -13,7 +22,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    height: 844,
+    backgroundColor: '#BFD0E0',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -1,10 +1,10 @@
 import * as React from "react";
 import { ImageBackground, StyleSheet, Text, View, Pressable } from "react-native";
 import { Image } from "expo-image";
-import { FontFamily } from "../GlobalStyles.js";
-import Input from "../Input.js";
-import Button from "../Button.js";
-import Bottom from "../Bottom.js";
+import { FontFamily } from "../components/GlobalStyles.js";
+import Input from "../components/Input.js";
+import Button from "../components/Button.js";
+import Bottom from "../components/Bottom.js";
 
 const Login = () => {
   return (

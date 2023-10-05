@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from "expo-font";
-import Login from './components/pages/Login.js';
+import Login from './pages/Login.js';
 
 export default function App() {
   const [fontsLoaded, error] = useFonts({

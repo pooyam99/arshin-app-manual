@@ -2,13 +2,13 @@ import * as React from "react";
 import { StyleSheet, Text, View, TextInput } from "react-native";
 import { FontFamily } from "./GlobalStyles.js";
 
-const Input = ({ title, key, secure }) => {
+const Input = ({ title, keyType, secure }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
       <TextInput
         style={styles.input}
-        keyboardType={key}
+        keyboardType={keyType}
         secureTextEntry={secure}
         autoCapitalize="none"
       />

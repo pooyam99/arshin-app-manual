@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ImageBackground, StyleSheet, Text, View, Pressable, TouchableHighlight } from "react-native";
+import { ImageBackground, StyleSheet, Text, View, Pressable } from "react-native";
 import { Image } from "expo-image";
 import { FontFamily } from "../components/GlobalStyles.js";
 import Input from "../components/Input.js";
@@ -8,7 +8,7 @@ import Bottom from "../components/Bottom.js";
 
 const Login = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.login}>
         <ImageBackground
           style={styles.bg}
@@ -35,20 +35,20 @@ const Login = () => {
         </View>
         <View style={styles.bottomBox}>
           <View style={styles.altLogin}>
-            <TouchableHighlight>
+            <Pressable>
               <Image
                 style={styles.googleLogo}
                 contentFit="cover"
                 source={require("../assets/Google-Logo.svg")}
               />
-            </TouchableHighlight>
-            <TouchableHighlight>
+            </Pressable>
+            <Pressable>
               <Image
                 style={styles.appleLogo}
                 contentFit="cover"
                 source={require("../assets/Apple-Logo.svg")}
               />
-            </TouchableHighlight>
+            </Pressable>
           </View>
           <View style={styles.forgot}>
             <Image
@@ -62,13 +62,16 @@ const Login = () => {
             </Pressable>
           </View>
         </View>
-        <Bottom />
       </View>
+      <Bottom disableMiddle />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   login: {
     flex: 1,
     alignItems: "center",
@@ -145,7 +148,7 @@ const styles = StyleSheet.create({
   brain2: {
     width: 100,
     height: 90,
-    marginTop: -10,
+    marginTop: -15,
   },
   forgot: {
     alignItems: "center",
@@ -160,7 +163,7 @@ const styles = StyleSheet.create({
     textShadowColor: "rgba(0, 0, 0, 0.25)",
     textShadowOffset: {
       width: 0,
-      height: 4,
+      height: 3,
     },
     textShadowRadius: 4,
     fontSize: 16,

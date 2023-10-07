@@ -3,29 +3,41 @@ import { StyleSheet, Text, View, Pressable } from "react-native";
 import { Image } from "expo-image";
 import { FontFamily } from "./GlobalStyles.js";
 
-const Bottom = () => {
+const Bottom = ({ disableMiddle }) => {
   return (
     <View style={styles.container}>
-      <Pressable style={styles.buttonLayout}>
-        <View style={styles.buttonContainer}>
-          <Text style={styles.text}>بازگشت</Text>
-          <Image
-            style={styles.back}
-            contentFit="cover"
-            source={require("../assets/Back.svg")}
-          />
-        </View>
-      </Pressable>
-      <Pressable style={[styles.buttonLayout, styles.buttonOverride]}>
-        <View style={styles.buttonContainer}>
-          <Text style={[styles.text, styles.textOverride]}>راهنما</Text>
-          <Image
-            style={styles.guide}
-            contentFit="cover"
-            source={require("../assets/Question.svg")}
-          />
-        </View>
-      </Pressable>
+      <View style={[styles.content, disableMiddle ? styles.noMiddle : null]}>
+        <Pressable style={[styles.buttonLayout, styles.red]}>
+          <View style={styles.buttonContainer}>
+            <Text style={[styles.textMain, styles.textBack]}>بازگشت</Text>
+            <Image
+              style={styles.back}
+              contentFit="cover"
+              source={require("../assets/Back.svg")}
+            />
+          </View>
+        </Pressable>
+        <Pressable style={[styles.buttonLayout, styles.purple, { display: disableMiddle ? "none" : "flex" }]}>
+          <View style={styles.buttonContainerPurple}>
+            <Text style={[styles.textMain, styles.textArrow]}>موقعیت فعلی</Text>
+            <Image
+              style={styles.arrow}
+              contentFit="cover"
+              source={require("../assets/Arrow-Up.svg")}
+            />
+          </View>
+        </Pressable>
+        <Pressable style={[styles.buttonLayout, styles.blue]}>
+          <View style={styles.buttonContainer}>
+            <Text style={[styles.textMain, styles.textGuide]}>راهنما</Text>
+            <Image
+              style={styles.guide}
+              contentFit="cover"
+              source={require("../assets/Question.svg")}
+            />
+          </View>
+        </Pressable>
+      </View>
     </View>
   );
 };
@@ -33,40 +45,63 @@ const Bottom = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    top: 365,
-    flexDirection: "row"
+    justifyContent: 'flex-end',
+    bottom: 15,
   },
-  text: {
+  content: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-around"
+  },
+  noMiddle: {
+    justifyContent: "space-between",
+    marginHorizontal: 18
+  },
+  textMain: {
     fontSize: 17,
     fontFamily: FontFamily.notoBold,
     color: "white",
+  },
+  textBack: {
     marginLeft: 9,
     marginTop: 3,
   },
-  textOverride: {
+  textArrow: {
+    fontSize: 14,
+  },
+  textGuide: {
     marginLeft: 18,
     marginTop: 4,
   },
   buttonContainer: {
-    display: "flex",
     flexDirection: "row"
   },
+  buttonContainerPurple: {
+    flexDirection: "column-reverse",
+    alignItems: "center",
+    marginTop: -14,
+  },
   buttonLayout: {
-    marginHorizontal: 75,
-    backgroundColor: "#cb0f31",
     borderRadius: 10,
     height: 43,
     width: 99,
-    shadowColor: "rgba(0, 0, 0, 0.25)",
     shadowRadius: 4,
-    shadowOpacity: 1,
     elevation: 4,
     shadowOffset: {
       width: 0,
       height: 4,
     }
   },
-  buttonOverride: {
+  red: {
+    backgroundColor: "#cb0f31"
+  },
+  purple: {
+    alignSelf: "center",
+    height: 38,
+    width: 107,
+    backgroundColor: "#9025B6",
+  },
+  blue: {
     backgroundColor: "#1b90d2"
   },
   back: {
@@ -75,6 +110,11 @@ const styles = StyleSheet.create({
     top: 3,
     marginLeft: 4,
     marginTop: 11,
+  },
+  arrow: {
+    height: 51,
+    width: 51,
+    marginBottom: -28
   },
   guide: {
     height: 23,

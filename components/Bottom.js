@@ -1,12 +1,15 @@
 import * as React from "react";
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable, Dimensions } from "react-native";
 import { Image } from "expo-image";
 import { FontFamily } from "./GlobalStyles.js";
+
+const screenHeight = Dimensions.get('window').height; 
+const screenWidth = Dimensions.get('window').width; 
 
 const Bottom = ({ disableMiddle }) => {
   return (
     <View style={styles.container}>
-      <View style={[styles.content, disableMiddle ? styles.noMiddle : null]}>
+      <View style={styles.content}>
         <Pressable style={[styles.buttonLayout, styles.red]}>
           <View style={styles.buttonContainer}>
             <Text style={[styles.textMain, styles.textBack]}>بازگشت</Text>
@@ -17,7 +20,7 @@ const Bottom = ({ disableMiddle }) => {
             />
           </View>
         </Pressable>
-        <Pressable style={[styles.buttonLayout, styles.purple, { display: disableMiddle ? "none" : "flex" }]}>
+        <Pressable style={[styles.buttonLayout, styles.purple(disableMiddle)]}>
           <View style={styles.buttonContainerPurple}>
             <Text style={[styles.textMain, styles.textArrow]}>موقعیت فعلی</Text>
             <Image
@@ -27,7 +30,7 @@ const Bottom = ({ disableMiddle }) => {
             />
           </View>
         </Pressable>
-        <Pressable style={[styles.buttonLayout, styles.blue]}>
+        <Pressable style={[styles.buttonLayout, styles.blue(disableMiddle)]}>
           <View style={styles.buttonContainer}>
             <Text style={[styles.textMain, styles.textGuide]}>راهنما</Text>
             <Image
@@ -44,18 +47,11 @@ const Bottom = ({ disableMiddle }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    bottom: 15,
+    position: "absolute",
+    top: screenHeight-56,
   },
   content: {
     flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "space-around"
-  },
-  noMiddle: {
-    justifyContent: "space-between",
-    marginHorizontal: 18
   },
   textMain: {
     fontSize: 17,
@@ -63,7 +59,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   textBack: {
-    marginLeft: 9,
+    marginLeft: 8,
     marginTop: 3,
   },
   textArrow: {
@@ -93,17 +89,21 @@ const styles = StyleSheet.create({
     }
   },
   red: {
-    backgroundColor: "#cb0f31"
+    backgroundColor: "#cb0f31",
+    left: 17
   },
-  purple: {
+  purple: (disableMiddle) => ({
+    left: screenWidth-359,
     alignSelf: "center",
     height: 38,
     width: 107,
     backgroundColor: "#9025B6",
-  },
-  blue: {
-    backgroundColor: "#1b90d2"
-  },
+    display: disableMiddle ? "none" : "flex"
+  }),
+  blue: (disableMiddle) => ({
+    backgroundColor: "#1b90d2",
+    left: disableMiddle ? screenWidth-215 : screenWidth-322
+  }),
   back: {
     height: 16,
     width: 17,

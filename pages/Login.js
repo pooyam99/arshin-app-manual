@@ -1,14 +1,17 @@
 import * as React from "react";
-import { ImageBackground, StyleSheet, Text, View, Pressable } from "react-native";
+import { ImageBackground, StyleSheet, Text, View, KeyboardAvoidingView, Pressable, Dimensions } from "react-native";
 import { Image } from "expo-image";
 import { FontFamily } from "../components/GlobalStyles.js";
 import Input from "../components/Input.js";
 import Button from "../components/Button.js";
 import Bottom from "../components/Bottom.js";
 
+const screenHeight = Dimensions.get('window').height;
+const screenWidth = Dimensions.get('window').width;
+
 const Login = () => {
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView enabled={false} style={styles.container}>
       <View style={styles.login}>
         <ImageBackground
           style={styles.bg}
@@ -64,13 +67,13 @@ const Login = () => {
         </View>
       </View>
       <Bottom disableMiddle />
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   login: {
     flex: 1,
@@ -79,11 +82,11 @@ const styles = StyleSheet.create({
   },
   bg: {
     flex: 1,
-    width: "100%",
-    height: "200%"
+    width: screenWidth,
+    height: screenHeight
   },
   topBox: {
-    top: 22,
+    top: -20,
     position: "absolute",
     alignItems: "center",
     justifyContent: "center",
@@ -107,7 +110,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
   },
   midBox: {
-    top: 270,
+    top: 230,
     position: "absolute",
     alignItems: "center",
   },
@@ -124,7 +127,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
   },
   bottomBox: {
-    top: 620,
+    top: 580,
     position: "absolute",
     alignItems: "center",
     flexDirection: "column",

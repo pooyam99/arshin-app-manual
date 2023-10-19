@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import { useFonts } from "expo-font";
+import TodoList from './pages/TodoList.js';
 import Login from './pages/Login.js';
-import Bottom from './components/Bottom.js';
 
 export default function App() {
   const [fontsLoaded, error] = useFonts({
@@ -13,10 +13,10 @@ export default function App() {
     return null;
   }
   return (
-    <View style={styles.container}>
-      <Login  />
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar style="auto" backgroundColor="white" translucent={false} />
+      <TodoList />
+    </SafeAreaView>
   );
 }
 

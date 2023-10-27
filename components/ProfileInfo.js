@@ -78,7 +78,7 @@ export default ProfileInfo
 
 const styles = StyleSheet.create({
   container: {
-    top: 33,
+    top: 30,
     left: 30,
     width: 352,
     height: 129,

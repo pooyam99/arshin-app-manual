@@ -1,10 +1,10 @@
 import * as React from "react";
 import { ImageBackground, StyleSheet, Text, View, KeyboardAvoidingView, Pressable, Dimensions } from "react-native";
 import { Image } from "expo-image";
-import { FontFamily } from "../components/GlobalStyles.js";
-import Input from "../components/Input.js";
-import Button from "../components/Button.js";
-import Bottom from "../components/Bottom.js";
+import { FontFamily } from "../styles/GlobalStyles.js";
+import Input from "../Input.js";
+import ActionBtn from "../ActionBtn.js";
+import Bottom from "../Bottom.js";
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
@@ -15,13 +15,13 @@ const Login = () => {
       <View style={styles.login}>
         <ImageBackground
           style={styles.bg}
-          source={require("../assets/Login-BG.jpg")}
+          source={require("../../assets/Login-BG.jpg")}
         />
         <View style={styles.topBox}>
           <Image
             style={styles.brain1}
             contentFit="cover"
-            source={require("../assets/Brain-Login-1.png")}
+            source={require("../../assets/Brain-Login-1.png")}
           />
           <Text style={styles.textTop}>{`لطفاً وارد حساب کاربری\nخود شوید`}</Text>
           <View style={styles.separator1} />
@@ -29,7 +29,7 @@ const Login = () => {
         <View style={styles.midBox}>
           <Input title={"شماره تلفن همراه"} keyType={"number-pad"} secure={false} />
           <Input title={"رمز عبور"} keyType={"default"} secure={true} />
-          <Button title={"ورود"} isBlue={true} />
+          <ActionBtn title={"ورود"} />
           <View style={styles.separator2}>
             <View style={styles.separator2child} />
             <Text style={[styles.textTop, { top: -15, fontSize: 24 }]}>یا</Text>
@@ -42,14 +42,14 @@ const Login = () => {
               <Image
                 style={styles.googleLogo}
                 contentFit="cover"
-                source={require("../assets/Google-Logo.svg")}
+                source={require("../../assets/Google-Logo.svg")}
               />
             </Pressable>
             <Pressable>
               <Image
                 style={styles.appleLogo}
                 contentFit="cover"
-                source={require("../assets/Apple-Logo.svg")}
+                source={require("../../assets/Apple-Logo.svg")}
               />
             </Pressable>
           </View>
@@ -57,7 +57,7 @@ const Login = () => {
             <Image
               style={styles.brain2}
               contentFit="cover"
-              source={require("../assets/Brain-Login-2.png")}
+              source={require("../../assets/Brain-Login-2.png")}
             />
             <Text style={[styles.textTop, styles.textOverride]}>رمز عبور خود را فراموش کردید؟</Text>
             <Pressable>

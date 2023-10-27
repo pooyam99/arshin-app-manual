@@ -1,7 +1,8 @@
 import { ImageBackground, StyleSheet, Text, View, Dimensions } from 'react-native'
 import React from 'react'
-import ProfileInfo from '../components/ProfileInfo'
-import Bottom from '../components/Bottom'
+import ProfileInfo from '../../ProfileInfo'
+import Bottom from '../../Bottom'
+import Main from './Main'
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
@@ -13,9 +14,10 @@ const TodoList = () => {
         <ImageBackground
           style={styles.bg}
           resizeMode='stretch'
-          source={require("../assets/TodoList/TodoList-BG.jpg")}
+          source={require("../../../assets/TodoList/TodoList-BG.jpg")}
         >
           <ProfileInfo />
+          <Main />
         </ImageBackground>
       </View>
       <Bottom />

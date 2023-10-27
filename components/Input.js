@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StyleSheet, Text, View, TextInput } from "react-native";
-import { FontFamily } from "./GlobalStyles.js";
+import { FontFamily } from "./styles/GlobalStyles.js";
 
 const Input = ({ title, keyType, secure }) => {
   return (

@@ -1,10 +1,10 @@
 import * as React from "react";
 import { StyleSheet, Text, View, Pressable, Dimensions } from "react-native";
 import { Image } from "expo-image";
-import { FontFamily } from "./GlobalStyles.js";
+import { FontFamily } from "./styles/GlobalStyles.js";
 
-const screenHeight = Dimensions.get('window').height; 
-const screenWidth = Dimensions.get('window').width; 
+const screenHeight = Dimensions.get('window').height;
+const screenWidth = Dimensions.get('window').width;
 
 const Bottom = ({ disableMiddle }) => {
   return (
@@ -48,7 +48,7 @@ const Bottom = ({ disableMiddle }) => {
 const styles = StyleSheet.create({
   container: {
     position: "absolute",
-    top: screenHeight-56,
+    top: screenHeight - 53,
   },
   content: {
     flexDirection: "row",
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     left: 17
   },
   purple: (disableMiddle) => ({
-    left: screenWidth-359,
+    left: screenWidth - 359,
     alignSelf: "center",
     height: 38,
     width: 107,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   }),
   blue: (disableMiddle) => ({
     backgroundColor: "#1b90d2",
-    left: disableMiddle ? screenWidth-215 : screenWidth-322
+    left: disableMiddle ? screenWidth - 215 : screenWidth - 322
   }),
   back: {
     height: 16,

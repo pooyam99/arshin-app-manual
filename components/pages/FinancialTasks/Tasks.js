@@ -12,10 +12,11 @@ const Tasks = ({ taskData }) => {
             title={item.title}
             amount={item.amount}
             date={item.date}
+            deleteTask={() => deleteTask(item.id)}
           />
         )}
         showsVerticalScrollIndicator={false}
-        keyExtractor={item => item.title}
+        keyExtractor={item => item.id}
       />
     </View>
   )

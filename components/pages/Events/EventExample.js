@@ -1,5 +1,6 @@
 export const EventExample = [
   {
+    id: 1,
     category: 'celebration',
     title: 'تولد',
     description: 'خرید هدفون برای کادو تولد علی',
@@ -10,6 +11,7 @@ export const EventExample = [
     }
   },
   {
+    id: 2,
     category: 'anniversary',
     title: 'سالگرد ازدواج',
     description: 'تماس تلفنی با رضا و تبریک',
@@ -20,6 +22,7 @@ export const EventExample = [
     }
   },
   {
+    id: 3,
     category: 'reminder',
     title: 'روز مادر',
     description: 'خرید گل برای دیدار با مادر',
@@ -30,6 +33,7 @@ export const EventExample = [
     }
   },
   {
+    id: 4,
     category: 'celebration',
     title: 'تولد',
     description: 'خرید هدفون برای کادو تولد علی',
@@ -40,6 +44,7 @@ export const EventExample = [
     }
   },
   {
+    id: 5,
     category: 'anniversary',
     title: 'سالگرد ازدواج',
     description: 'تماس تلفنی با رضا و تبریک',
@@ -50,6 +55,7 @@ export const EventExample = [
     }
   },
   {
+    id: 6,
     category: 'reminder',
     title: 'روز مادر',
     description: 'خرید گل برای دیدار با مادر',

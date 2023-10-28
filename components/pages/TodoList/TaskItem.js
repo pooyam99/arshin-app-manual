@@ -26,7 +26,7 @@ const getInfo = (category) => {
   }
 }
 
-const TaskItem = ({ category, title, time }) => {
+const TaskItem = ({ category, title, time, deleteTask }) => {
   const [isChecked, setChecked] = useState(false);
   const [rating, setRating] = useState(0);
 
@@ -84,7 +84,7 @@ const TaskItem = ({ category, title, time }) => {
             />
             <Text style={styles.buttonTitle}>ویرایش</Text>
           </Pressable>
-          <Pressable style={[styles.button, { backgroundColor: "#E32A40" }]}>
+          <Pressable style={[styles.button, { backgroundColor: "#E32A40" }]} onPress={deleteTask}>
             <Image
               style={{ width: 16, height: 16 }}
               contentFit="contain"
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
   },
-  categoryTitle:{
+  categoryTitle: {
     fontFamily: FontFamily.notoBold,
     fontSize: 10,
     color: 'white',

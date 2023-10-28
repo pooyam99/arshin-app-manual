@@ -1,5 +1,6 @@
 export const TaskExample = [
   {
+    id: 1,
     category: 'fun',
     title: 'ورزش صبحگاهی',
     time: {
@@ -9,6 +10,7 @@ export const TaskExample = [
     }
   },
   {
+    id: 2,
     category: 'fun',
     title: 'کار با اپلیکیشن آرشین',
     time: {
@@ -18,6 +20,7 @@ export const TaskExample = [
     }
   },
   {
+    id: 3,
     category: 'shopping',
     title: 'خرید عینک',
     time: {
@@ -27,6 +30,7 @@ export const TaskExample = [
     }
   },
   {
+    id: 4,
     category: 'school',
     title: 'انجام تکالیف',
     time: {
@@ -36,6 +40,7 @@ export const TaskExample = [
     }
   },
   {
+    id: 5,
     category: 'work',
     title: 'انجام پروژه',
     time: {
@@ -45,6 +50,7 @@ export const TaskExample = [
     }
   },
   {
+    id: 6,
     category: 'reading',
     title: 'خواندن کتاب',
     time: {
@@ -54,6 +60,7 @@ export const TaskExample = [
     }
   },
   {
+    id: 7,
     category: 'misc',
     title: 'خواب',
     time: {
@@ -63,6 +70,7 @@ export const TaskExample = [
     }
   },
   {
+    id: 8,
     category: 'work',
     title: 'ادامه پروژه',
     time: {
@@ -72,6 +80,7 @@ export const TaskExample = [
     }
   },
   {
+    id: 9,
     category: 'work',
     title: 'اتمام پروژه',
     time: {

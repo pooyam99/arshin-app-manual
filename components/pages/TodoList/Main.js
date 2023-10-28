@@ -30,31 +30,21 @@ const toText = (activeTab) => {
   }
 }
 
-const taskCounts = (activeTab) => {
-  let total = TaskExample.length;
-  let today = TaskExample.filter((item) => item.time.day === 'امروز' ? true : false).length;
-  let tomorrow = TaskExample.filter((item) => item.time.day === 'فردا' ? true : false).length;
-  let week = TaskExample.filter((item) => item.time.day === 'هفته' ? true : false).length;
-  let month = TaskExample.filter((item) => item.time.day === 'ماه' ? true : false).length;
-
-  switch (activeTab) {
-    case 'دسته‌ها':
-      return total
-    case 'همه':
-      return total
-    case 'امروز':
-      return today
-    case 'فردا':
-      return tomorrow
-    case 'هفته':
-      return week
-    case 'ماه':
-      return month
-  }
-}
-
 const Main = () => {
   const [activeTab, setActiveTab] = useState(tabs[0])
+  const [data, setData] = useState(TaskExample)
+
+  deleteTask = (taskId) => {
+    setData(data.filter((item) => item.id !== taskId))
+  }
+
+  taskCounts = (activeTab) => {
+    if (activeTab === 'همه' || activeTab === 'دسته‌ها') {
+      return data.length
+    } else {
+      return data.filter((item) => item.time.day === activeTab).length
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -104,7 +94,7 @@ const Main = () => {
       >
         <View style={styles.bottomBox}>
           <View style={styles.taskBox}>
-            <Tasks activeTab={activeTab} taskData={TaskExample} />
+            <Tasks activeTab={activeTab} taskData={data} deleteTask={deleteTask} />
           </View>
           <AddTask />
           <ToolBoxBtn />

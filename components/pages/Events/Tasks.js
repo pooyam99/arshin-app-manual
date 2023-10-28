@@ -2,7 +2,7 @@ import { FlatList, StyleSheet, View } from 'react-native'
 import React from 'react'
 import TaskItem from './TaskItem'
 
-const Tasks = ({ taskData }) => {
+const Tasks = ({ taskData, deleteTask }) => {
   return (
     <View style={styles.container}>
       <FlatList
@@ -13,10 +13,11 @@ const Tasks = ({ taskData }) => {
             title={item.title}
             description={item.description}
             date={item.date}
+            deleteTask={() => deleteTask(item.id)}
           />
         )}
         showsVerticalScrollIndicator={false}
-        keyExtractor={item => item.title}
+        keyExtractor={item => item.id}
       />
     </View>
   )

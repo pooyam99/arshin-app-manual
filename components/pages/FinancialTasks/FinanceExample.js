@@ -1,5 +1,6 @@
 export const FinanceExample = [
   {
+    id: 1,
     title: 'قسط وام مسکن',
     amount: '1200000',
     date: {
@@ -9,6 +10,7 @@ export const FinanceExample = [
     }
   },
   {
+    id: 2,
     title: 'سررسید چک فروش',
     amount: '1500000',
     date: {
@@ -18,6 +20,7 @@ export const FinanceExample = [
     }
   },
   {
+    id: 3,
     title: 'قسط وام خودرو',
     amount: '1500000',
     date: {
@@ -27,6 +30,7 @@ export const FinanceExample = [
     }
   },
   {
+    id: 4,
     title: 'قسط وام ازدواج',
     amount: '16000000',
     date: {
@@ -36,6 +40,7 @@ export const FinanceExample = [
     }
   },
   {
+    id: 5,
     title: 'سررسید چک خرید',
     amount: '15000000',
     date: {
@@ -45,6 +50,7 @@ export const FinanceExample = [
     }
   },
   {
+    id: 6,
     title: 'قسط وام کار',
     amount: '25000000',
     date: {

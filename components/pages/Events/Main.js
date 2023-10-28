@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet, Text, TextInput, View } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
-import React from 'react'
+import React, { useState } from 'react'
 import { Image } from 'expo-image';
 import { FontFamily } from '../../styles/GlobalStyles';
 import ToolBoxBtn from './ToolBoxBtn';
@@ -12,6 +12,11 @@ const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
 const Main = () => {
+  const [data, setData] = useState(EventExample)
+
+  deleteTask = (taskId) => {
+    setData(data.filter((item) => item.id !== taskId))
+  }
 
   return (
     <View style={styles.container}>
@@ -41,7 +46,7 @@ const Main = () => {
       >
         <View style={styles.bottomBox}>
           <View style={styles.taskBox}>
-            <Tasks taskData={EventExample} />
+            <Tasks taskData={data} deleteTask={deleteTask} />
           </View>
           <AddTask />
           <ToolBoxBtn />

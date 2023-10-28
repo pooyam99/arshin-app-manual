@@ -3,25 +3,12 @@ import React from 'react'
 import Categories from './Categories'
 import TaskItem from './TaskItem'
 
-const Tasks = ({ activeTab, taskData }) => {
+const Tasks = ({ activeTab, taskData, deleteTask }) => {
   const category = (activeTab) => {
-    let total = taskData;
-    let today = taskData.filter((item) => item.time.day === 'امروز' ? true : false);
-    let tomorrow = taskData.filter((item) => item.time.day === 'فردا' ? true : false);
-    let week = taskData.filter((item) => item.time.day === 'هفته' ? true : false);
-    let month = taskData.filter((item) => item.time.day === 'ماه' ? true : false);
-  
-    switch (activeTab) {
-      case 'همه':
-        return total
-      case 'امروز':
-        return today
-      case 'فردا':
-        return tomorrow
-      case 'هفته':
-        return week
-      case 'ماه':
-        return month
+    if (activeTab === 'همه') {
+      return taskData
+    } else {
+      return taskData.filter((item) => item.time.day === activeTab)
     }
   }
 
@@ -37,6 +24,7 @@ const Tasks = ({ activeTab, taskData }) => {
               category={item.category}
               title={item.title}
               time={item.time}
+              deleteTask={() => deleteTask(item.id)}
             />
           )}
           showsVerticalScrollIndicator={false}

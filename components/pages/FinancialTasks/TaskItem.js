@@ -7,7 +7,7 @@ import { FinanceStyles } from '../../styles/FinanceStyles';
 
 const screenWidth = Dimensions.get('window').width;
 
-const TaskItem = ({ title, amount, date }) => {
+const TaskItem = ({ title, amount, date, deleteTask }) => {
   const rng = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
@@ -49,7 +49,7 @@ const TaskItem = ({ title, amount, date }) => {
               />
               <Text style={styles.buttonTitle}>ویرایش</Text>
             </Pressable>
-            <Pressable style={[styles.button, { backgroundColor: "#E32A40" }]}>
+            <Pressable style={[styles.button, { backgroundColor: "#E32A40" }]} onPress={deleteTask}>
               <Image
                 style={{ width: 16, height: 16 }}
                 contentFit="contain"

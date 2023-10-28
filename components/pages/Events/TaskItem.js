@@ -18,7 +18,7 @@ const getInfo = (category) => {
   }
 }
 
-const TaskItem = ({ category, title, description, date }) => {
+const TaskItem = ({ category, title, description, date, deleteTask }) => {
   return (
     <LinearGradient
       colors={['rgba(0,0,0,0.15)', 'transparent']}
@@ -48,7 +48,7 @@ const TaskItem = ({ category, title, description, date }) => {
               />
               <Text style={styles.buttonTitle}>ویرایش</Text>
             </Pressable>
-            <Pressable style={[styles.button, { backgroundColor: "#E32A40" }]}>
+            <Pressable style={[styles.button, { backgroundColor: "#E32A40" }]} onPress={deleteTask}>
               <Image
                 style={{ width: 16, height: 16 }}
                 contentFit="contain"

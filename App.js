@@ -1,6 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import { useFonts } from "expo-font";
+import Login from './components/pages/Login'
+import Welcome from './components/pages/Welcome'
+import Validation from './components/pages/Validation'
+import SignUp from './components/pages/SignUp'
 import TodoList from './components/pages/TodoList/TodoList';
 import Events from './components/pages/Events/Events';
 import FinancialTasks from './components/pages/FinancialTasks/FinancialTasks';

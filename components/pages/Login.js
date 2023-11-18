@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { ImageBackground, StyleSheet, Text, View, KeyboardAvoidingView, Pressable, Dimensions } from "react-native";
 import { Image } from "expo-image";
 import { FontFamily } from "../styles/GlobalStyles.js";
@@ -15,13 +15,13 @@ const Login = () => {
       <View style={styles.login}>
         <ImageBackground
           style={styles.bg}
-          source={require("../../assets/Login-BG.jpg")}
+          source={require("../../assets/Login/Login-BG.jpg")}
         />
         <View style={styles.topBox}>
           <Image
             style={styles.brain1}
             contentFit="cover"
-            source={require("../../assets/Brain-Login-1.png")}
+            source={require("../../assets/Login/Brain-Login-1.png")}
           />
           <Text style={styles.textTop}>{`لطفاً وارد حساب کاربری\nخود شوید`}</Text>
           <View style={styles.separator1} />
@@ -57,7 +57,7 @@ const Login = () => {
             <Image
               style={styles.brain2}
               contentFit="cover"
-              source={require("../../assets/Brain-Login-2.png")}
+              source={require("../../assets/Login/Brain-Login-2.png")}
             />
             <Text style={[styles.textTop, styles.textOverride]}>رمز عبور خود را فراموش کردید؟</Text>
             <Pressable>

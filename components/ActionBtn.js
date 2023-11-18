@@ -1,11 +1,11 @@
-import * as React from "react";
+import React from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import { FontFamily } from "./styles/GlobalStyles.js";
 import { LinearGradient } from "expo-linear-gradient";
 
 const ActionBtn = ({ title, green }) => {
   return (
-    <Pressable>
+    <Pressable android_ripple={{color: 'rgba(255, 255, 255, 0.1)', foreground: true}} style={{marginTop: 10}}>
       <LinearGradient
         colors={['rgba(255, 255, 255, 0.4)', 'transparent', 'transparent', 'rgba(0,0,0,0.2)']}
         locations={[0.02, 0.15, 0.75, 0.98]}
@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 64,
     width: 230,
-    marginTop: 10,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: green ? "#4A7F00" : "#126ead"
